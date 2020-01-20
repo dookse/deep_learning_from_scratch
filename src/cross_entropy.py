@@ -6,14 +6,16 @@ def cross_entropy_error(y, t):
     return -np.sum(t * np.log(y + delta))
 
 
-if __name__ == '__main__':
+def run():
     t = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
     y = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]
     print(*(zip(t, y)))
-
     e1 = cross_entropy_error(np.array(y), np.array(t))
     print(e1)
-
     y = [0.1, 0.05, 0.1, 0.0, 0.05, 0.1, 0.0, 0.6, 0.0, 0.0]
     e2 = cross_entropy_error(np.array(y), np.array(t))
     print(e2)
+
+
+if __name__ == '__main__':
+    run()
