@@ -23,8 +23,7 @@ for i in tqdm(range(iters_num)):
     batch_mask = np.random.choice(train_size, batch_size)
     x_batch = x_train[batch_mask]
     t_batch = t_train[batch_mask]
-
-    grad = network.numerical_gradient(x_batch, t_batch)
+    grad = network.gradient(x_batch, t_batch)
 
     for key in ('w1', 'b1', 'w2', 'b2'):
         network.params[key] -= learning_rate * grad[key]
