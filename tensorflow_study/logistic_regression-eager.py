@@ -36,7 +36,7 @@ b = tf.Variable(tf.zeros([1]), name='bias')
 
 
 def logistic_regression(features):
-    hypothesis = tf.divide(1., 1. + tf.exp(tf.matmul(features, W) + b))
+    hypothesis = tf.sigmoid(tf.matmul(features, W) + b)
     return hypothesis
 
 
